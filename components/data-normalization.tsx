@@ -314,7 +314,7 @@ export function DataNormalization() {
               </div>
             </TabsContent>
           </Tabs>
-          <p>第2正規形では、部分的な依存関係を持つデータを別のテーブルに分��ます。こによ、データの複を減らし、更新時の矛盾を防ぎます。</p>
+          <p>第2正規形では、部分的な依存関係を持つデータを別のテーブルに分。こによ、ータの複を減らし、更新時の矛盾を防ぎます。</p>
         </div>
       )
     },
@@ -438,7 +438,7 @@ export function DataNormalization() {
           </ol>
           <p>これらのステップを踏むことで、データの重複を減らし、一貫性を保ち、データの整合性を高めることができます。</p>
           <Button onClick={() => setShowQuiz(true)} className="mt-4">
-            理解度チェック
+            ���解度チェッ���
           </Button>
         </div>
       )
@@ -468,7 +468,7 @@ export function DataNormalization() {
         </div>
         <div className="bg-gray-100 p-4 rounded-md">
           <h3 className="font-bold">エリシア王</h3>
-          <p>エクセル王国の王様。王国を守るため、カイとリクに全てを託す。</p>
+          <p>エクセル王国の王様。王国を守るため、カイとリクに全を託す。</p>
         </div>
       </div>
     )
@@ -522,7 +522,13 @@ export function DataNormalization() {
     title: "チャプター2: 「第二の試練 〜重複の洞窟〜」",
     content: (
       <div className="space-y-4">
-        <img src="/images/Chapter2.png?height=200&width=400" alt="重複の洞窟" className="mx-auto rounded-lg shadow-md" />
+        <Image 
+          src="/images/Chapter2.png"
+          alt="重複の洞窟"
+          width={400}
+          height={200}
+          className="mx-auto rounded-lg shadow-md"
+        />
         <p>次に二人が訪れたのは、「重複の洞窟」。洞窟内には、同じ社員の名前や部署が繰り返し書かれ、どれが最新の情報かがわからなくなっていた。</p>
         <div className="bg-yellow-100 p-4 rounded-md">
           <p className="font-semibold">カイ:</p>
@@ -544,7 +550,13 @@ export function DataNormalization() {
     title: "チャプター3: 「第三の試練 〜依存の森〜」",
     content: (
       <div className="space-y-4">
-        <img src="/images/Chapter3.png?height=200&width=400" alt="依存の森" className="mx-auto rounded-lg shadow-md" />
+        <Image 
+          src="/images/Chapter3.png"
+          alt="依存の森"
+          width={400}
+          height={200}
+          className="mx-auto rounded-lg shadow-md"
+        />
         <p>最後に二人が足を踏み入れたのは、「依存の森」。森の中では、情報があちこちに分散し、どの情報が正しいのかがわからなくなっていた。特に、部署ごとの責任者情報が入り乱れ、迷路のような状態になっていた。</p>
         <div className="bg-purple-100 p-4 rounded-md">
           <p className="font-semibold">カイ:</p>
@@ -566,7 +578,13 @@ export function DataNormalization() {
     title: "エピローグ: 「エクセル王国の復興」",
     content: (
       <div className="space-y-4">
-        <img src="/images/Epilogue.png?height=200&width=400" alt="復興したエクセル王国" className="mx-auto rounded-lg shadow-md" />
+        <Image 
+          src="/images/Epilogue.png"
+          alt="復興したエクセル王国"
+          width={400}
+          height={200}
+          className="mx-auto rounded-lg shadow-md"
+        />
         <p>3つの試練を乗り越えたカイは、エリシア王に報告をするために城へ戻った。エリシア王は涙を流しながら感謝の言葉を述べた。</p>
         <div className="bg-pink-100 p-4 rounded-md">
           <p className="font-semibold">エリシア王:</p>
@@ -664,7 +682,7 @@ export function DataNormalization() {
                   answers: [
                     "すべての情報を1つの大きなテーブルに入れる",
                     "社員情報と勤怠情報を別々のテーブルに分ける",
-                    "各社員ごとに別々のテーブルを作成する",
+                    "各社ごとに別々のテーブルを作成する",
                     "勤怠情報を日付ごとに別々のテーブルに分ける"
                   ],
                   correctAnswer: "社員情報と勤怠情報を別々のテーブルに分ける",
@@ -673,7 +691,7 @@ export function DataNormalization() {
                 {
                   question: "第3正規形を適用すると、どのような利点がありますか？",
                   answers: [
-                    "データ入力が簡単になる",
+                    "データ入力が単になる",
                     "データの検索速度が上がる",
                     "非キー列同士の依存関係がなくなり、データの一貫性が向上する",
                     "テーブルの数が減少する"
