@@ -314,7 +314,7 @@ export function DataNormalization() {
               </div>
             </TabsContent>
           </Tabs>
-          <p>第2正規形では、部分的な依存関係を持つデータを別のテーブルに分割します。これによ���、データの���複を減らし、更新時の矛盾を防ぎます。</p>
+          <p>第2正規形では、部分的な依存関係を持つデータを別のテーブルに分��ます。こによ、データの複を減らし、更新時の矛盾を防ぎます。</p>
         </div>
       )
     },
@@ -494,7 +494,13 @@ export function DataNormalization() {
     title: "チャプター1: 「第一の試練 〜繰り返しの迷宮〜」",
     content: (
       <div className="space-y-4">
-        <img src="/images/Chapter1.png" alt="繰り返しの迷宮" className="mx-auto rounded-lg shadow-md" />
+        <Image 
+          src="/images/Chapter1.png"
+          alt="繰り返しの迷宮"
+          width={400}
+          height={200}
+          className="mx-auto rounded-lg shadow-md"
+        />
         <p>カイとリクが最初に辿り着いたのは、「繰り返しの迷宮」だった。迷宮の壁には、無数に刻まれた「東京, 東京, 東京…」や「3000円, 3000円, 3000円…」といった文字が何度も繰り返されている。</p>
         <div className="bg-blue-100 p-4 rounded-md">
           <p className="font-semibold">カイ:</p>
@@ -683,7 +689,7 @@ export function DataNormalization() {
                     "基本給と手当を別々のテーブルに分け、社員IDで関連付ける",
                     "毎月の給与計算結果を1つのセルにまとめて保存する"
                   ],
-                  correctAnswer: "基本給と手当を別々のテーブルに分け、社員IDで関連付ける",
+                  correctAnswer: "基本給と手当を別のテーブルに分け、社員IDで関連付ける",
                   explanation: "給与計算を効率的に行うには、基本給と手当を別々のテーブルに分け、社員IDで関連付けるのが効果的です。これにより、基本給の変更や手当の追加・削除を柔軟に行うことができます。また、給与計算の際には必要な情報を各テーブルから取得して計算を行うことで、データの一貫性を保ちながら効率的な処理が可能になります。"
                 }
               ]}
