@@ -5,8 +5,16 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image';
 
-function Quiz({ questions }: { questions: any[] }) {
+interface Question {
+  question: string;
+  answers: string[];
+  correctAnswer: string;
+  explanation: string;
+}
+
+function Quiz({ questions }: { questions: Question[] }) {
   const [currentQuestion, setCurrentQuestion] = useState<number>(0)
   const [selectedAnswers, setSelectedAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null))
   const [showResults, setShowResults] = useState<boolean>(false)
@@ -306,7 +314,7 @@ export function DataNormalization() {
               </div>
             </TabsContent>
           </Tabs>
-          <p>第2正規形では、部分的な依存関係を持つデータを別のテーブルに分割します。これにより、データの重複を減らし、更新時の矛盾を防ぎます。</p>
+          <p>第2正規形では、部分的な依存関係を持つデータを別のテーブルに分割します。これによ���、データの���複を減らし、更新時の矛盾を防ぎます。</p>
         </div>
       )
     },
@@ -469,9 +477,16 @@ export function DataNormalization() {
     title: "プロローグ",
     content: (
       <div className="space-y-4">
-        <img src="/images/Prologue.png?height=200&width=400" alt="エクセル王国の風景" className="mx-auto rounded-lg shadow-md" />
-        <p>エクセル王国はかつて、すべてが整った美しい国だった。だが、時が経つにつれて、データの混乱が王国全体に広がっていった。特に「旅費精算書」は複雑さを増し、誰もがその整理に手を焼いていた。</p>
-        <p>エリシア王はついに、一人の若者に助けを求める決意をした。「頼む、カイ。この王国を救ってほしい。」そう告げられた総務課の新米社員カイは、使命を胸に王国の未来を守ることを決意した。</p>
+        <Image 
+          src="/images/Prologue.png"
+          alt="エクセル王国の風景"
+          width={400}
+          height={200}
+          className="mx-auto rounded-lg shadow-md"
+        />
+        <p>&quot;なんで、同じ情報がこんなにたくさん書かれているんだろう…？&quot;</p>
+        <p className="font-semibold mt-2">リク:</p>
+        <p>"カイ、迷宮が混乱しているのは、一つの場所にたくさんの情報を詰め込みすぎているからさ。一度、情報を一つずつ整理してみよう。"</p>
       </div>
     )
   },
@@ -606,7 +621,7 @@ export function DataNormalization() {
             </div>
             <div className="flex space-x-4">
               <Button onClick={() => setShowStory(true)} className="flex-1">
-                データ整理の旅を始める
+                データ整理旅を始める
               </Button>
             </div>
           </div>
@@ -647,7 +662,7 @@ export function DataNormalization() {
                     "勤怠情報を日付ごとに別々のテーブルに分ける"
                   ],
                   correctAnswer: "社員情報と勤怠情報を別々のテーブルに分ける",
-                  explanation: "第2正規形を適用する場合、社員情報（社員ID、氏名、部署など）と勤怠情報（出勤日、勤務時間など）を別々のテーブルに分けます。これにより、社員情報の更��と勤怠情報��記録を独立して行うことができ、データの重複を減らすことができます。社員IDを使って両テーブルを関連付けることで、必要な情報を柔軟に取得できます。"
+                  explanation: "第2正規形を適用する場合、社員情報（社員ID、氏名、部署など）と勤怠情報（出勤日、勤務時間など）を別々のテーブルに分けます。これにより、社員情報の更新と勤怠情報の記録を独立して行うことができ、データの重複を減らすことができます。社員IDを使って両テーブルを関連付けることで、必要な情報を柔軟に取得できます。"
                 },
                 {
                   question: "第3正規形を適用すると、どのような利点がありますか？",
